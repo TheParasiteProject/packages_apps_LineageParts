@@ -177,5 +177,7 @@
 
     <!-- Lineage SDK info -->
     <string name="lineage_sdk_info_title">Lineage SDK information</string>
+    <!-- Device Info screen. LineageOS legal. -->
+    <string name="lineagelicense_title">LineageOS legal</string>
 
 </resources>
