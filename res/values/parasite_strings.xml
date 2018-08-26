@@ -170,6 +170,11 @@
     <string name="unit_pixels" translatable="false">dp</string>
     <string name="unit_hz" translatable="false">hz</string>
 
+    <!-- DO NOT TRANSLATE Summary placeholder -->
+    <string name="summary_placeholder" translatable="false">&#160;</string>
+    <!-- DO NOT TRANSLATE Summary placeholder reserving 2 lines -->
+    <string name="summary_two_lines_placeholder" translatable="false">&#160;\n&#160;</string>
+
     <!-- Lineage SDK info -->
     <string name="lineage_sdk_info_title">Lineage SDK information</string>
 

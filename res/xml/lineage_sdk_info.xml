@@ -8,6 +8,31 @@
     android:key="lineage_sdk_info"
     android:title="@string/lineage_sdk_info_title">
 
+    <!-- Lineage version -->
+    <Preference
+        android:key="lineage_version"
+        android:title="@*lineageos.platform:string/lineage_version"
+        android:summary="@string/summary_placeholder"
+        lineage:enableCopying="true"
+        lineage:controller="org.lineageos.lineageparts.sdkinfo.LineageVersionDetailPreferenceController"/>
+
+    <!-- Vendor security patch -->
+    <Preference
+        android:key="vendor_security_key"
+        android:title="@*lineageos.platform:string/lineage_vendor_security_patch"
+        android:selectable="false"
+        lineage:enableCopying="true"
+        lineage:controller="org.lineageos.lineageparts.sdkinfo.LineageVendorSecurityPatchLevelPreferenceController"/>
+    
+    <!-- Build date -->
+    <Preference
+        android:key="os_build_date"
+        android:title="@*lineageos.platform:string/build_date"
+        android:summary="@string/summary_placeholder"
+        android:selectable="false"
+        lineage:enableCopying="true"
+        lineage:controller="org.lineageos.lineageparts.sdkinfo.LineageBuildDatePreferenceController"/>
+
     <Preference
         android:key="contributors_cloud"
         android:title="@string/contributors_cloud_fragment_title"
