@@ -763,7 +763,7 @@ public class ButtonSettings extends SettingsPreferenceFragment
         }
     }
 
-    private static boolean hasNavigationBar() {
+    protected static boolean hasNavigationBar() {
         boolean hasNavigationBar = false;
         try {
             IWindowManager windowManager = WindowManagerGlobal.getWindowManagerService();

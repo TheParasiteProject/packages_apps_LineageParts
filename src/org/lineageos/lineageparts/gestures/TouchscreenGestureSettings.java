@@ -25,6 +25,7 @@ import org.lineageos.lineageparts.R;
 import org.lineageos.lineageparts.SettingsPreferenceFragment;
 import org.lineageos.lineageparts.search.BaseSearchIndexProvider;
 import org.lineageos.lineageparts.search.Searchable;
+import org.lineageos.lineageparts.utils.DeviceUtils;
 import org.lineageos.lineageparts.utils.ResourceUtils;
 
 import static org.lineageos.internal.util.DeviceKeysConstants.*;
@@ -45,6 +46,9 @@ public class TouchscreenGestureSettings extends SettingsPreferenceFragment
     private TouchscreenGesture[] mTouchscreenGestures;
 
     private static final String KEY_THREE_FINGERS_SWIPE = "three_fingers_swipe";
+    private static final String KEY_EDGE_LONG_SWIPE = "gesture_nav_custom_options";
+
+    private Preference mEdgeLongSwipeAction;
 
     private ListPreference mThreeFingersSwipeAction;
 
@@ -62,6 +66,20 @@ public class TouchscreenGestureSettings extends SettingsPreferenceFragment
                 LineageSettings.System.KEY_THREE_FINGERS_SWIPE_ACTION,
                 Action.NOTHING);
         mThreeFingersSwipeAction = initList(KEY_THREE_FINGERS_SWIPE, threeFingersSwipeAction);
+
+        // Edge long swipe gesture
+        mEdgeLongSwipeAction = getPreferenceScreen().findPreference(KEY_EDGE_LONG_SWIPE);
+        updateDisableNavkeysCategories();
+    }
+
+    private void updateDisableNavkeysCategories() {
+        if (DeviceUtils.isEdgeToEdgeEnabled(requireContext())) {
+            getPreferenceScreen().addPreference(mEdgeLongSwipeAction);
+        } else if (DeviceUtils.isSwipeUpEnabled(getContext())) {
+            getPreferenceScreen().removePreference(mEdgeLongSwipeAction);
+        } else {
+            getPreferenceScreen().removePreference(mEdgeLongSwipeAction);
+        }
     }
 
     private ListPreference initList(String key, Action value) {
@@ -255,6 +273,11 @@ public class TouchscreenGestureSettings extends SettingsPreferenceFragment
             if (!isTouchscreenGesturesSupported(context)) {
                 result.add(KEY_TOUCHSCREEN_GESTURE_SETTINGS);
                 result.add(KEY_TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK);
+            }
+            if (DeviceUtils.isSwipeUpEnabled(context)) {
+                result.add(KEY_EDGE_LONG_SWIPE);
+            } else if (!DeviceUtils.isEdgeToEdgeEnabled(context)) {
+                result.add(KEY_EDGE_LONG_SWIPE);
             }
             return result;
         }

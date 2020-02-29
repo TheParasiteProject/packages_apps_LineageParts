@@ -10,6 +10,13 @@
     android:key="touchscreen_gesture_settings"
     android:title="@string/touchscreen_gesture_settings_title">
 
+    <Preference
+        android:key="gesture_nav_custom_options"
+        android:title="@string/navbar_gesture_tweaks_pref_title"
+        android:summary="@string/navbar_gesture_tweaks_pref_summary"
+        android:fragment="org.lineageos.lineageparts.gestures.GestureTweaksSettings"
+        android:persistent="false" />
+
     <!-- Three fingers swipe action -->
     <ListPreference
         android:key="three_fingers_swipe"
