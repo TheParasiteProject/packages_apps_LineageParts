@@ -23,6 +23,10 @@
     <uses-permission android:name="android.permission.READ_SEARCH_INDEXABLES" />
     <uses-permission android:name="android.permission.VIBRATE" />
 
+    <permission
+        android:name="com.android.touch.gestures.TRIGGER_SCREEN_OFF_GESTURE"
+        android:protectionLevel="signatureOrSystem" />
+
     <uses-permission android:name="lineageos.permission.MANAGE_REMOTE_PREFERENCES" />
 
     <protected-broadcast android:name="lineageos.platform.app.profiles.PROFILES_STATE_CHANGED" />
@@ -143,7 +147,13 @@
                 android:resource="@string/summary_empty" />
         </activity-alias>
 
-        <activity android:name=".gestures.KeyHandler" />
+        <activity
+            android:name=".gestures.ScreenOffLaunchGestureActivity"
+            android:permission="com.android.touch.gestures.TRIGGER_SCREEN_OFF_GESTURE"
+            android:exported="true"
+            android:label="@string/touchscreen_gesture_settings_title"
+            android:theme="@style/AppTheme.Transparent">
+        </activity>
 
         <!-- Profiles settings (System category) -->
         <activity-alias
