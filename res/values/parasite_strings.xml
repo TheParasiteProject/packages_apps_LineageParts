@@ -159,4 +159,16 @@
     <string name="navigation_bar_compact_layout_title">Compact layout</string>
     <string name="navigation_bar_compact_layout_summary">Use a compact layout in the navigation bar</string>
 
+    <!-- Network traffic -->
+    <string name="network_traffic_enabled_title">Use network traffic monitor</string>
+    <string name="network_traffic_autohide_kilobits" translatable="false">Kb/s</string>
+    <string name="network_traffic_autohide_kilobytes" translatable="false">KB/s</string>
+    <string name="network_traffic_autohide_threshold">Inactivity threshold</string>
+    <string name="network_traffic_refresh_interval_title">Refresh interval</string>
+    <string name="network_traffic_refresh_interval_summary">Duration after which speed is remeasured</string>
+    <string name="network_traffic_units_bits">Bits per second (b/s)</string>
+    <string name="network_traffic_units_bytes">Bytes per second (B/s)</string>
+    <string name="network_traffic_hidearrow">Hide arrows</string>
+    <string name="network_traffic_hidearrow_summary">Hide the traffic monitor arrows</string>
+
 </resources>
