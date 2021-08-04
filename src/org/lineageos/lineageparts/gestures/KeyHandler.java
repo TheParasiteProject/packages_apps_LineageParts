@@ -214,18 +214,6 @@ public class KeyHandler implements DeviceKeyHandler {
                 case TouchscreenGestureConstants.ACTION_FLASHLIGHT:
                     toggleFlashlight();
                     break;
-                case TouchscreenGestureConstants.ACTION_BROWSER:
-                    launchBrowser();
-                    break;
-                case TouchscreenGestureConstants.ACTION_DIALER:
-                    launchDialer();
-                    break;
-                case TouchscreenGestureConstants.ACTION_EMAIL:
-                    launchEmail();
-                    break;
-                case TouchscreenGestureConstants.ACTION_MESSAGES:
-                    launchMessages();
-                    break;
                 case TouchscreenGestureConstants.ACTION_PLAY_PAUSE_MUSIC:
                     playPauseMusic();
                     break;
@@ -247,20 +235,16 @@ public class KeyHandler implements DeviceKeyHandler {
                 case TouchscreenGestureConstants.ACTION_WAKE_DEVICE:
                     wakeDevice();
                     break;
+                case TouchscreenGestureConstants.ACTION_BROWSER:
+                case TouchscreenGestureConstants.ACTION_DIALER:
+                case TouchscreenGestureConstants.ACTION_EMAIL:
+                case TouchscreenGestureConstants.ACTION_MESSAGES:
                 case TouchscreenGestureConstants.ACTION_WECHAT_PAY:
-                    launchWechatPay();
-                    break;
                 case TouchscreenGestureConstants.ACTION_ALIPAY_PAY:
-                    launchAlipayPay();
-                    break;
                 case TouchscreenGestureConstants.ACTION_WECHAT_SCAN:
-                    launchWechatScan();
-                    break;
                 case TouchscreenGestureConstants.ACTION_ALIPAY_SCAN:
-                    launchAlipayScan();
-                    break;
                 case TouchscreenGestureConstants.ACTION_ALIPAY_TRIP:
-                    launchAlipayTrip();
+                    launchActivity(msg.arg1);
                     break;
             }
         }
@@ -274,27 +258,9 @@ public class KeyHandler implements DeviceKeyHandler {
         doHapticFeedback();
     }
 
-    private void launchBrowser() {
+    private void launchActivity(int action) {
         performWakeUp();
-        ActionUtils.triggerAction(mContext, TouchscreenGestureConstants.ACTION_BROWSER);
-        doHapticFeedback();
-    }
-
-    private void launchDialer() {
-        performWakeUp();
-        ActionUtils.triggerAction(mContext, TouchscreenGestureConstants.ACTION_DIALER);
-        doHapticFeedback();
-    }
-
-    private void launchEmail() {
-        performWakeUp();
-        ActionUtils.triggerAction(mContext, TouchscreenGestureConstants.ACTION_EMAIL);
-        doHapticFeedback();
-    }
-
-    private void launchMessages() {
-        performWakeUp();
-        ActionUtils.triggerAction(mContext, TouchscreenGestureConstants.ACTION_MESSAGES);
+        ActionUtils.triggerAction(mContext, action);
         doHapticFeedback();
     }
 
@@ -359,41 +325,6 @@ public class KeyHandler implements DeviceKeyHandler {
     private void wakeDevice() {
         mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
         mPowerManager.wakeUp(SystemClock.uptimeMillis(), GESTURE_WAKEUP_REASON);
-    }
-
-    private void launchWechatPay() {
-        mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
-        mPowerManager.wakeUp(SystemClock.uptimeMillis(), GESTURE_WAKEUP_REASON);
-        ActionUtils.triggerAction(mContext, TouchscreenGestureConstants.ACTION_WECHAT_PAY);
-        doHapticFeedback();
-    }
-
-    private void launchAlipayPay() {
-        mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
-        mPowerManager.wakeUp(SystemClock.uptimeMillis(), GESTURE_WAKEUP_REASON);
-        ActionUtils.triggerAction(mContext, TouchscreenGestureConstants.ACTION_ALIPAY_PAY);
-        doHapticFeedback();
-    }
-
-    private void launchWechatScan() {
-        mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
-        mPowerManager.wakeUp(SystemClock.uptimeMillis(), GESTURE_WAKEUP_REASON);
-        ActionUtils.triggerAction(mContext, TouchscreenGestureConstants.ACTION_WECHAT_SCAN);
-        doHapticFeedback();
-    }
-
-    private void launchAlipayScan() {
-        mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
-        mPowerManager.wakeUp(SystemClock.uptimeMillis(), GESTURE_WAKEUP_REASON);
-        ActionUtils.triggerAction(mContext, TouchscreenGestureConstants.ACTION_ALIPAY_SCAN);
-        doHapticFeedback();
-    }
-
-    private void launchAlipayTrip() {
-        mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
-        mPowerManager.wakeUp(SystemClock.uptimeMillis(), GESTURE_WAKEUP_REASON);
-        ActionUtils.triggerAction(mContext, TouchscreenGestureConstants.ACTION_ALIPAY_TRIP);
-        doHapticFeedback();
     }
 
     private void dispatchMediaKeyWithWakeLockToMediaSession(final int keycode) {
