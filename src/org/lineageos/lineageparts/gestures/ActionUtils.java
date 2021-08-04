@@ -58,19 +58,19 @@ public class ActionUtils {
         return intent;
     }
 
-    public static Intent getIntentByAction(Context context, int action){
+    public static Intent getIntentByAction(Context context, int action) {
         Intent intent = null;
-        if (action == TouchscreenGestureConstants.ACTION_BROWSER){
+        if (action == TouchscreenGestureConstants.ACTION_BROWSER) {
             intent = getBrowserIntent(context);
-        }else if (action == TouchscreenGestureConstants.ACTION_DIALER){
+        } else if (action == TouchscreenGestureConstants.ACTION_DIALER) {
             intent = getDialerIntent();
-        }else if (action == TouchscreenGestureConstants.ACTION_EMAIL){
+        } else if (action == TouchscreenGestureConstants.ACTION_EMAIL) {
             intent = getEmailIntent(context);
-        }else if (action == TouchscreenGestureConstants.ACTION_MESSAGES){
+        } else if (action == TouchscreenGestureConstants.ACTION_MESSAGES) {
             intent = getMessagesIntent(context);
-        }else if (action == TouchscreenGestureConstants.ACTION_WECHAT_PAY){
+        } else if (action == TouchscreenGestureConstants.ACTION_WECHAT_PAY) {
             intent = getWechatPayIntent(context);
-        }else if (action == TouchscreenGestureConstants.ACTION_ALIPAY_PAY){
+        } else if (action == TouchscreenGestureConstants.ACTION_ALIPAY_PAY) {
             intent = getAlipayPayIntent(context);
         }
         return intent;
@@ -78,11 +78,11 @@ public class ActionUtils {
 
     public static void triggerAction(Context context, int action) {
         Intent intent = getIntentByAction(context, action);
-        if (intent == null){
+        if (intent == null) {
             return;
         }
         KeyguardManager km = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);
-        if (km.isKeyguardLocked()){
+        if (km.isKeyguardLocked()) {
             intent = new Intent();
             intent.setClassName("org.lineageos.lineageparts.gestures",
                 "org.lineageos.lineageparts.gestures.ScreenOffLaunchGestureActivity");
@@ -92,7 +92,7 @@ public class ActionUtils {
     }
 
     public static void startActivitySafely(Context context, Intent intent) {
-        if (intent == null){
+        if (intent == null) {
             return;
         }
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK
