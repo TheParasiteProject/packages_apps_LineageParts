@@ -58,6 +58,22 @@ public class ActionUtils {
         return intent;
     }
 
+    private static Intent getWechatScanIntent(Context context) {
+        Intent intent = new Intent();
+        ComponentName cn=new ComponentName("com.tencent.mm",
+                "com.tencent.mm.plugin.scanner.ui.BaseScanUI");
+        intent.setComponent(cn);
+        return intent;
+    }
+
+    private static Intent getAlipayScanIntent(Context context) {
+        Intent intent = new Intent();
+        ComponentName cn=new ComponentName("com.eg.android.AlipayGphone",
+                "com.alipay.mobile.scan.as.main.MainCaptureActivity");
+        intent.setComponent(cn);
+        return intent;
+    }
+
     public static Intent getIntentByAction(Context context, int action) {
         Intent intent = null;
         if (action == TouchscreenGestureConstants.ACTION_BROWSER) {
@@ -72,6 +88,10 @@ public class ActionUtils {
             intent = getWechatPayIntent(context);
         } else if (action == TouchscreenGestureConstants.ACTION_ALIPAY_PAY) {
             intent = getAlipayPayIntent(context);
+        } else if (action == TouchscreenGestureConstants.ACTION_WECHAT_SCAN) {
+            intent = getWechatScanIntent(context);
+        } else if (action == TouchscreenGestureConstants.ACTION_ALIPAY_SCAN) {
+            intent = getAlipayScanIntent(context);
         }
         return intent;
     }

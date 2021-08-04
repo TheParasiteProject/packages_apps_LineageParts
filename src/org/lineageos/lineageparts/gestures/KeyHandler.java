@@ -253,6 +253,12 @@ public class KeyHandler implements DeviceKeyHandler {
                 case TouchscreenGestureConstants.ACTION_ALIPAY_PAY:
                     launchAlipayPay();
                     break;
+                case TouchscreenGestureConstants.ACTION_WECHAT_SCAN:
+                    launchWechatScan();
+                    break;
+                case TouchscreenGestureConstants.ACTION_ALIPAY_SCAN:
+                    launchAlipayScan();
+                    break;
             }
         }
     }
@@ -363,6 +369,20 @@ public class KeyHandler implements DeviceKeyHandler {
         mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
         mPowerManager.wakeUp(SystemClock.uptimeMillis(), GESTURE_WAKEUP_REASON);
         ActionUtils.triggerAction(mContext, TouchscreenGestureConstants.ACTION_ALIPAY_PAY);
+        doHapticFeedback();
+    }
+
+    private void launchWechatScan() {
+        mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
+        mPowerManager.wakeUp(SystemClock.uptimeMillis(), GESTURE_WAKEUP_REASON);
+        ActionUtils.triggerAction(mContext, TouchscreenGestureConstants.ACTION_WECHAT_SCAN);
+        doHapticFeedback();
+    }
+
+    private void launchAlipayScan() {
+        mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
+        mPowerManager.wakeUp(SystemClock.uptimeMillis(), GESTURE_WAKEUP_REASON);
+        ActionUtils.triggerAction(mContext, TouchscreenGestureConstants.ACTION_ALIPAY_SCAN);
         doHapticFeedback();
     }
 
