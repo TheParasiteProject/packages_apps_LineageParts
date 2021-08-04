@@ -247,6 +247,12 @@ public class KeyHandler implements DeviceKeyHandler {
                 case TouchscreenGestureConstants.ACTION_WAKE_DEVICE:
                     wakeDevice();
                     break;
+                case TouchscreenGestureConstants.ACTION_WECHAT_PAY:
+                    launchWechatPay();
+                    break;
+                case TouchscreenGestureConstants.ACTION_ALIPAY_PAY:
+                    launchAlipayPay();
+                    break;
             }
         }
     }
@@ -344,6 +350,20 @@ public class KeyHandler implements DeviceKeyHandler {
     private void wakeDevice() {
         mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
         mPowerManager.wakeUp(SystemClock.uptimeMillis(), GESTURE_WAKEUP_REASON);
+    }
+
+    private void launchWechatPay() {
+        mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
+        mPowerManager.wakeUp(SystemClock.uptimeMillis(), GESTURE_WAKEUP_REASON);
+        ActionUtils.triggerAction(mContext, TouchscreenGestureConstants.ACTION_WECHAT_PAY);
+        doHapticFeedback();
+    }
+
+    private void launchAlipayPay() {
+        mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
+        mPowerManager.wakeUp(SystemClock.uptimeMillis(), GESTURE_WAKEUP_REASON);
+        ActionUtils.triggerAction(mContext, TouchscreenGestureConstants.ACTION_ALIPAY_PAY);
+        doHapticFeedback();
     }
 
     private void dispatchMediaKeyWithWakeLockToMediaSession(final int keycode) {

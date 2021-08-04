@@ -28,4 +28,6 @@ class TouchscreenGestureConstants {
     static final int ACTION_VOLUME_UP = 11;
     static final int ACTION_AMBIENT_DISPLAY = 12;
     static final int ACTION_WAKE_DEVICE = 13;
+    static final int ACTION_WECHAT_PAY = 14;
+    static final int ACTION_ALIPAY_PAY = 15;
 }

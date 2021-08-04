@@ -316,6 +316,8 @@
         <item>@string/touchscreen_gesture_action_volume_up</item>
         <item>@string/touchscreen_gesture_action_ambient_display</item>
         <item>@string/touchscreen_gesture_action_wake_device</item>
+        <item>@string/touchscreen_gesture_action_wechat_pay</item>
+        <item>@string/touchscreen_gesture_action_alipay_pay</item>
     </string-array>
 
     <string-array name="touchscreen_gesture_action_values">
@@ -333,6 +335,8 @@
         <item>11</item>
         <item>12</item>
         <item>13</item>
+        <item>14</item>
+        <item>15</item>
     </string-array>
 
     <string-array name="torch_long_press_power_timeout_entries" translatable="false">

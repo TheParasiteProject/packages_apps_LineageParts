@@ -2,6 +2,7 @@ package org.lineageos.lineageparts.gestures;
 
 import android.app.KeyguardManager;
 import android.content.Context;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
@@ -41,6 +42,22 @@ public class ActionUtils {
                 new Intent(Intent.ACTION_VIEW, Uri.parse("sms:")));
     }
 
+    private static Intent getWechatPayIntent(Context context) {
+        Intent intent = new Intent();
+        ComponentName cn=new ComponentName("com.tencent.mm",
+                "com.tencent.mm.plugin.offline.ui.WalletOfflineCoinPurseUI");
+        intent.setComponent(cn);
+        return intent;
+    }
+
+    private static Intent getAlipayPayIntent(Context context) {
+        Intent intent = new Intent();
+        ComponentName cn=new ComponentName("com.eg.android.AlipayGphone",
+                "com.alipay.mobile.onsitepay.merge.OnsitepayActivityStandard");
+        intent.setComponent(cn);
+        return intent;
+    }
+
     public static Intent getIntentByAction(Context context, int action){
         Intent intent = null;
         if (action == TouchscreenGestureConstants.ACTION_BROWSER){
@@ -51,6 +68,10 @@ public class ActionUtils {
             intent = getEmailIntent(context);
         }else if (action == TouchscreenGestureConstants.ACTION_MESSAGES){
             intent = getMessagesIntent(context);
+        }else if (action == TouchscreenGestureConstants.ACTION_WECHAT_PAY){
+            intent = getWechatPayIntent(context);
+        }else if (action == TouchscreenGestureConstants.ACTION_ALIPAY_PAY){
+            intent = getAlipayPayIntent(context);
         }
         return intent;
     }
