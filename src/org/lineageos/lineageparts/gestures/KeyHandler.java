@@ -250,6 +250,8 @@ public class KeyHandler implements DeviceKeyHandler {
                 case TouchscreenGestureConstants.ACTION_PAYTM_SCAN_PAY:
                 case TouchscreenGestureConstants.ACTION_PAYTM_QR_CODE:
                 case TouchscreenGestureConstants.ACTION_PHONEPE:
+                case TouchscreenGestureConstants.ACTION_GOOGLE_MAPS:
+                case TouchscreenGestureConstants.ACTION_GOOGLE_SEARCH:
                     launchActivity(msg.arg1);
                     break;
             }

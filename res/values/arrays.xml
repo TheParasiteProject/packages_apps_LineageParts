@@ -327,6 +327,8 @@
         <item>@string/touchscreen_gesture_action_paytm_scan_pay</item>
         <item>@string/touchscreen_gesture_action_paytm_qr_code</item>
         <item>@string/touchscreen_gesture_action_phonepe</item>
+        <item>@string/touchscreen_gesture_action_google_maps</item>
+        <item>@string/touchscreen_gesture_action_google_search</item>
     </string-array>
 
     <string-array name="touchscreen_gesture_action_values">
@@ -355,6 +357,8 @@
         <item>22</item>
         <item>23</item>
         <item>24</item>
+        <item>25</item>
+        <item>26</item>
     </string-array>
 
     <string-array name="torch_long_press_power_timeout_entries" translatable="false">

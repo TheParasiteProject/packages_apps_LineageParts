@@ -131,6 +131,22 @@ public class ActionUtils {
         return intent;
     }
 
+    private static Intent getGoogleMapsIntent(Context context) {
+        Intent intent = new Intent();
+        ComponentName cn=new ComponentName("com.google.android.apps.maps",
+                "com.google.android.maps.MapsActivity");
+        intent.setComponent(cn);
+        return intent;
+    }
+
+    private static Intent getGoogleSearchIntent(Context context) {
+        Intent intent = new Intent();
+        ComponentName cn=new ComponentName("com.google.android.googlequicksearchbox",
+                "com.google.android.googlequicksearchbox.SearchActivity");
+        intent.setComponent(cn);
+        return intent;
+    }
+
     public static Intent getIntentByAction(Context context, int action) {
         Intent intent = null;
         if (action == TouchscreenGestureConstants.ACTION_BROWSER) {
@@ -163,6 +179,10 @@ public class ActionUtils {
             intent = getPaytmQRCodeIntent(context);
         } else if (action == TouchscreenGestureConstants.ACTION_PHONEPE) {
             intent = getPhonePeIntent(context);
+        } else if (action == TouchscreenGestureConstants.ACTION_GOOGLE_MAPS) {
+            intent = getGoogleMapsIntent(context);
+        } else if (action == TouchscreenGestureConstants.ACTION_GOOGLE_SEARCH) {
+            intent = getGoogleSearchIntent(context);
         }
         return intent;
     }
