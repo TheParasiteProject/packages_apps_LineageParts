@@ -259,6 +259,9 @@ public class KeyHandler implements DeviceKeyHandler {
                 case TouchscreenGestureConstants.ACTION_ALIPAY_SCAN:
                     launchAlipayScan();
                     break;
+                case TouchscreenGestureConstants.ACTION_ALIPAY_TRIP:
+                    launchAlipayTrip();
+                    break;
             }
         }
     }
@@ -383,6 +386,13 @@ public class KeyHandler implements DeviceKeyHandler {
         mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
         mPowerManager.wakeUp(SystemClock.uptimeMillis(), GESTURE_WAKEUP_REASON);
         ActionUtils.triggerAction(mContext, TouchscreenGestureConstants.ACTION_ALIPAY_SCAN);
+        doHapticFeedback();
+    }
+
+    private void launchAlipayTrip() {
+        mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
+        mPowerManager.wakeUp(SystemClock.uptimeMillis(), GESTURE_WAKEUP_REASON);
+        ActionUtils.triggerAction(mContext, TouchscreenGestureConstants.ACTION_ALIPAY_TRIP);
         doHapticFeedback();
     }
 
