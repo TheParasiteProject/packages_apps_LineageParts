@@ -82,6 +82,14 @@ public class ActionUtils {
         return intent;
     }
 
+    private static Intent getWalletTripIntent(Context context) {
+        Intent intent = new Intent();
+        ComponentName cn=new ComponentName("com.finshell.wallet",
+                "com.nearme.wallet.nfc.ui.NfcConsumeActivity");
+        intent.setComponent(cn);
+        return intent;
+    }
+
     public static Intent getIntentByAction(Context context, int action) {
         Intent intent = null;
         if (action == TouchscreenGestureConstants.ACTION_BROWSER) {
@@ -102,6 +110,8 @@ public class ActionUtils {
             intent = getAlipayScanIntent(context);
         } else if (action == TouchscreenGestureConstants.ACTION_ALIPAY_TRIP) {
             intent = getAlipayTripIntent(context);
+        } else if (action == TouchscreenGestureConstants.ACTION_WALLET_TRIP) {
+            intent = getWalletTripIntent(context);
         }
         return intent;
     }

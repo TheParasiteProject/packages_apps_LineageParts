@@ -244,6 +244,7 @@ public class KeyHandler implements DeviceKeyHandler {
                 case TouchscreenGestureConstants.ACTION_WECHAT_SCAN:
                 case TouchscreenGestureConstants.ACTION_ALIPAY_SCAN:
                 case TouchscreenGestureConstants.ACTION_ALIPAY_TRIP:
+                case TouchscreenGestureConstants.ACTION_WALLET_TRIP:
                     launchActivity(msg.arg1);
                     break;
             }
