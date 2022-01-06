@@ -2,4 +2,15 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="navigation_bar_compact_layout_title">Compact layout</string>
     <string name="navigation_bar_compact_layout_summary">Compact the layout of the navigation bar</string>
+
+    <!-- Status bar - Brightness -->
+    <string name="status_bar_brightness_slider_title">Brightness slider</string>
+    <string name="status_bar_brightness_slider_never">Never show</string>
+    <string name="status_bar_brightness_slider_expanded">Show when expanded</string>
+    <string name="status_bar_brightness_slider_always">Show always</string>
+    <string name="status_bar_brightness_slider_position_title">Brightness slider Position</string>
+    <string name="status_bar_brightness_slider_position_top">Top</string>
+    <string name="status_bar_brightness_slider_position_bottom">Bottom</string>
+    <string name="status_bar_brightness_slider_auto_title">Auto brightness</string>
+    <string name="status_bar_brightness_slider_auto_summary">Show toggle for adaptive brightness near the slider</string>
 </resources>
