@@ -9,4 +9,7 @@
     <!-- [CHAR LIMIT=NONE] Menu for manage apps to control whether system processes are hidden -->
     <string name="menu_hide_system">Hide system</string>
 
+    <!-- Floating rotation button -->
+    <string name="enable_floating_rotation_button_title">Floating rotate button</string>
+
 </resources>
