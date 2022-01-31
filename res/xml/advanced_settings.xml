@@ -7,5 +7,12 @@
     <PreferenceCategory
         android:key="advanced_backup_key"
         android:title="@string/advanced_backup_title">
+
+        <lineageos.preference.SystemPropertySwitchPreference
+            android:key="persist.sys.pixelprops.gphotos"
+            android:title="@string/unlimited_photos_storage_title"
+            android:summary="@string/unlimited_photos_storage_summary"
+            android:defaultValue="false"
+            android:order="400"/>
     </PreferenceCategory>
 </PreferenceScreen>

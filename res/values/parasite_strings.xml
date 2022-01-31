@@ -57,4 +57,8 @@
     <string name="advanced_settings_title">Advanced Settings</string>
     <string name="advanced_backup_title">Backup</string>
 
+    <!-- Unlimited g00gle ph0t0s st0rage -->
+    <string name="unlimited_photos_storage_title">Unlimited Google Photos storage</string>
+    <string name="unlimited_photos_storage_summary">Unlimited storage for backup photos. Google Photos’ new features will not be available.</string>
+
 </resources>
