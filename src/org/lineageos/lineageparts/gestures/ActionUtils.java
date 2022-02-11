@@ -53,7 +53,7 @@ public class ActionUtils {
     private static Intent getAlipayPayIntent(Context context) {
         Intent intent = new Intent();
         ComponentName cn=new ComponentName("com.eg.android.AlipayGphone",
-                "com.alipay.mobile.onsitepay.merge.OnsitepayActivityStandard");
+                "com.eg.android.AlipayGphone.FastStartActivity");
         intent.setComponent(cn);
         return intent;
     }
