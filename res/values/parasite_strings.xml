@@ -84,4 +84,8 @@
     <string name="app_downgrade_title">Allow application downgrade</string>
     <string name="app_downgrade_summary">Permit to downgrading applications. May lead to crashes and data corruption.</string>
 
+    <!-- Ignore window secure -->
+    <string name="ignore_window_secure_title">Ignore window secure flags</string>
+    <string name="ignore_window_secure_summary">Remove the screenshots and screenrecords limits for all applications. Can be convenient in some cases but may lead to privacy leaks. Need to restart applications for the change to take effect.</string>
+
 </resources>
