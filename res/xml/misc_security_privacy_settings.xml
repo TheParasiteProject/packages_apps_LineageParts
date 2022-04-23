@@ -11,6 +11,13 @@
     <PreferenceCategory
         android:key="misc_security_category"
         android:title="@string/misc_security_header">
+
+        <lineageos.preference.GlobalSettingSwitchPreference
+            android:key="pm_downgrade_allowed"
+            android:title="@string/app_downgrade_title"
+            android:summary="@string/app_downgrade_summary"
+            android:defaultValue="false"/>
+
     </PreferenceCategory>
 
     <PreferenceCategory
