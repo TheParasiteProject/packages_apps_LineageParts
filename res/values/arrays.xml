@@ -322,6 +322,7 @@
         <item>@string/touchscreen_gesture_action_alipay_scan</item>
         <item>@string/touchscreen_gesture_action_alipay_trip</item>
         <item>@string/touchscreen_gesture_action_wallet_trip</item>
+        <item>@string/touchscreen_gesture_action_gpay</item>
     </string-array>
 
     <string-array name="touchscreen_gesture_action_values">
@@ -345,6 +346,7 @@
         <item>17</item>
         <item>18</item>
         <item>19</item>
+        <item>20</item>
     </string-array>
 
     <string-array name="torch_long_press_power_timeout_entries" translatable="false">

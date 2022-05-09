@@ -90,6 +90,15 @@ public class ActionUtils {
         return intent;
     }
 
+
+    private static Intent getGpayIntent(Context context) {
+        Intent intent = new Intent();
+        ComponentName cn=new ComponentName("com.google.android.apps.nbu.paisa.user",
+                "com.google.nbu.paisa.flutter.gpay.app.MainActivity");
+        intent.setComponent(cn);
+        return intent;
+    }
+
     public static Intent getIntentByAction(Context context, int action) {
         Intent intent = null;
         if (action == TouchscreenGestureConstants.ACTION_BROWSER) {
@@ -112,6 +121,8 @@ public class ActionUtils {
             intent = getAlipayTripIntent(context);
         } else if (action == TouchscreenGestureConstants.ACTION_WALLET_TRIP) {
             intent = getWalletTripIntent(context);
+        } else if (action == TouchscreenGestureConstants.ACTION_GPAY) {
+            intent = getGpayIntent(context);
         }
         return intent;
     }
