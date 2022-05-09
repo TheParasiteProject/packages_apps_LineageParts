@@ -99,6 +99,30 @@ public class ActionUtils {
         return intent;
     }
 
+    private static Intent getPaytmIntent(Context context) {
+        Intent intent = new Intent();
+        ComponentName cn=new ComponentName("net.one97.paytm",
+                "net.one97.paytm.landingpage.activity.AJRMainActivity");
+        intent.setComponent(cn);
+        return intent;
+    }
+
+    private static Intent getPaytmScanPayIntent(Context context) {
+        Intent intent = new Intent();
+        ComponentName cn=new ComponentName("net.one97.paytm",
+                "net.one97.paytm.wallet.newdesign.activity.PaySendActivityV2");
+        intent.setComponent(cn);
+        return intent;
+    }
+
+    private static Intent getPaytmQRCodeIntent(Context context) {
+        Intent intent = new Intent();
+        ComponentName cn=new ComponentName("net.one97.paytm",
+                "net.one97.paytm.acceptPayment.home.AcceptPaymentMainActivity");
+        intent.setComponent(cn);
+        return intent;
+    }
+
     public static Intent getIntentByAction(Context context, int action) {
         Intent intent = null;
         if (action == TouchscreenGestureConstants.ACTION_BROWSER) {
@@ -123,6 +147,12 @@ public class ActionUtils {
             intent = getWalletTripIntent(context);
         } else if (action == TouchscreenGestureConstants.ACTION_GPAY) {
             intent = getGpayIntent(context);
+        } else if (action == TouchscreenGestureConstants.ACTION_PAYTM) {
+            intent = getPaytmIntent(context);
+        } else if (action == TouchscreenGestureConstants.ACTION_PAYTM_SCAN_PAY) {
+            intent = getPaytmScanPayIntent(context);
+        } else if (action == TouchscreenGestureConstants.ACTION_PAYTM_QR_CODE) {
+            intent = getPaytmQRCodeIntent(context);
         }
         return intent;
     }

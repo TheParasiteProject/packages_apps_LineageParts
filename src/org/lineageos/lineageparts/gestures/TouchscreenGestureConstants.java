@@ -35,4 +35,7 @@ class TouchscreenGestureConstants {
     static final int ACTION_ALIPAY_TRIP = 18;
     static final int ACTION_WALLET_TRIP = 19;
     static final int ACTION_GPAY = 20;
+    static final int ACTION_PAYTM = 21;
+    static final int ACTION_PAYTM_SCAN_PAY = 22;
+    static final int ACTION_PAYTM_QR_CODE = 23;
 }

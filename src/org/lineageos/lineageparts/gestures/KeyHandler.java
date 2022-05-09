@@ -246,6 +246,9 @@ public class KeyHandler implements DeviceKeyHandler {
                 case TouchscreenGestureConstants.ACTION_ALIPAY_TRIP:
                 case TouchscreenGestureConstants.ACTION_WALLET_TRIP:
                 case TouchscreenGestureConstants.ACTION_GPAY:
+                case TouchscreenGestureConstants.ACTION_PAYTM:
+                case TouchscreenGestureConstants.ACTION_PAYTM_SCAN_PAY:
+                case TouchscreenGestureConstants.ACTION_PAYTM_QR_CODE:
                     launchActivity(msg.arg1);
                     break;
             }
