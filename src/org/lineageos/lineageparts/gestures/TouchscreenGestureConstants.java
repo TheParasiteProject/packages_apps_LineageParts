@@ -38,4 +38,5 @@ class TouchscreenGestureConstants {
     static final int ACTION_PAYTM = 21;
     static final int ACTION_PAYTM_SCAN_PAY = 22;
     static final int ACTION_PAYTM_QR_CODE = 23;
+    static final int ACTION_PHONEPE = 24;
 }
