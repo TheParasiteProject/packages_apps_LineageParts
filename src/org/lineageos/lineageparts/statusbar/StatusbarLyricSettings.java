@@ -6,10 +6,6 @@ package org.lineageos.lineageparts.statusbar;
 
 import android.os.Bundle;
 
-import androidx.preference.Preference;
-
-import com.android.internal.logging.nano.MetricsProto;
-
 import org.lineageos.lineageparts.R;
 import org.lineageos.lineageparts.SettingsPreferenceFragment;
 
