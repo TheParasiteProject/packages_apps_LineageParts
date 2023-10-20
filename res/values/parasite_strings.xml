@@ -56,4 +56,8 @@
     <!-- Charger haptic feedback -->
     <string name="charger_haptic_feedback_title">Vibrate on charger connection changes</string>
 
+    <!-- Advanced Settings -->
+    <string name="advanced_settings_title">Advanced Settings</string>
+    <string name="advanced_backup_title">Backup</string>
+
 </resources>
