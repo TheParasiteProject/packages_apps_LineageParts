@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:lineage="http://schemas.android.com/apk/res-auto"
+        android:key="advanced_settings"
+        android:title="@string/advanced_settings_title">
+
+    <PreferenceCategory
+        android:key="advanced_backup_key"
+        android:title="@string/advanced_backup_title">
+    </PreferenceCategory>
+</PreferenceScreen>

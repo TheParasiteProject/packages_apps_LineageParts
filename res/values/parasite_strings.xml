@@ -53,4 +53,8 @@
     <string name="back_swipe_extended_summary">Trigger action on wider swipe (more than half of display size), or a L swipe (vertically longer enough)</string>
     <string name="action_app_action">Application</string>
 
+    <!-- Advanced Settings -->
+    <string name="advanced_settings_title">Advanced Settings</string>
+    <string name="advanced_backup_title">Backup</string>
+
 </resources>
