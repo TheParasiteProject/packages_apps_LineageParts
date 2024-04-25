@@ -48,6 +48,28 @@
             android:summary="@string/hide_screen_capture_status_summary"
             android:defaultValue="false"/>
 
+        <PreferenceCategory
+            android:title="@string/privacy_indicator_category"
+            android:key="privacy_indicator_category">
+            <lineageos.preference.SecureSettingSwitchPreference
+                android:key="enable_camera_privacy_indicator"
+                android:title="@string/mic_camera_privacy_indicator_title"
+                android:summary="@string/mic_camera_privacy_indicator_summary"
+                android:defaultValue="true" />
+
+            <lineageos.preference.SecureSettingSwitchPreference
+                android:key="enable_location_privacy_indicator"
+                android:title="@string/location_privacy_indicator_title"
+                android:summary="@string/location_privacy_indicator_summary"
+                android:defaultValue="true" />
+
+            <lineageos.preference.SecureSettingSwitchPreference
+                android:key="enable_projection_privacy_indicator"
+                android:title="@string/projection_privacy_indicator_title"
+                android:summary="@string/projection_privacy_indicator_summary"
+                android:defaultValue="true" />
+        </PreferenceCategory>
+
     </PreferenceCategory>
 
 </PreferenceScreen>
