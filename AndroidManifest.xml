@@ -5,6 +5,7 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="org.lineageos.lineageparts"
     android:sharedUserId="android.uid.system"
     android:versionCode="1"
@@ -36,7 +37,9 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/lineageparts_title"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SubSettingsBase">
+        android:theme="@style/Theme.SubSettingsBase"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        tools:replace="android:appComponentFactory">
 
         <activity
             android:name=".PartsActivity"

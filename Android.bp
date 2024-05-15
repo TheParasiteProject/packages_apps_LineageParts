@@ -28,6 +28,7 @@ android_app {
         "androidx.dynamicanimation_dynamicanimation",
         "androidx.palette_palette",
         "androidx.recyclerview_recyclerview",
+        "custom-sdk_com.github.bumptech.glide_glide",
         "jsr305",
         "org.lineageos.platform.internal",
         "SettingsLibPreference",
