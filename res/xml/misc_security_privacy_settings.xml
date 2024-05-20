@@ -24,6 +24,12 @@
             android:summary="@string/spoof_storage_encryption_status_summary"
             android:defaultValue="false"/>
 
+        <Preference
+            android:key="hide_developer_status_settings"
+            android:title="@string/hide_developer_status_title"
+            android:summary="@string/hide_developer_status_summary"
+            android:fragment="org.lineageos.lineageparts.security.HideDeveloperStatusSettings" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
