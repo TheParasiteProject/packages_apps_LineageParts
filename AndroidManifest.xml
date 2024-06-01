@@ -287,6 +287,29 @@
                 android:resource="@string/trust_summary" />
         </activity-alias>
 
+        <!-- Misc Security & Privacy Settings (Privacy category) -->
+        <activity-alias
+            android:name=".security.MiscSecurityPrivacySettings"
+            android:exported="true"
+            android:label="@string/misc_security_privacy_title"
+            android:targetActivity="PartsActivity">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+                <action android:name="org.lineageos.lineageparts.MISC_SECURITY_PRIVACY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.privacy" />
+            <meta-data
+                android:name="com.android.settings.profile"
+                android:value="primary_profile_only" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/summary_empty" />
+        </activity-alias>
+
         <!-- Contributors Cloud (MyDeviceInfo category) -->
         <activity-alias
             android:name=".contributors.ContributorsCloudFragment"

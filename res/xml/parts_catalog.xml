@@ -96,6 +96,11 @@
           android:fragment="org.lineageos.lineageparts.trust.TrustPreferences"
           lineage:xmlRes="@xml/trust_preferences" />
 
+    <part android:key="misc_security_privacy_settings"
+          android:title="@string/misc_security_privacy_title"
+          android:fragment="org.lineageos.lineageparts.security.MiscSecurityPrivacySettings"
+          lineage:xmlRes="@xml/misc_security_privacy_settings" />
+
     <part android:key="advanced_settings"
           android:title="@string/advanced_settings_title"
           android:fragment="org.lineageos.lineageparts.system.AdvancedSettings"
