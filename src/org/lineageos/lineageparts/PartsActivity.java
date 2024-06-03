@@ -29,8 +29,6 @@ import com.android.settingslib.widget.MainSwitchBar;
 import lineageos.preference.PartInfo;
 import lineageos.preference.PartsList;
 
-import org.lineageos.lineageparts.profiles.NFCProfileTagCallback;
-
 public class PartsActivity extends CollapsingToolbarBaseActivity implements
         PreferenceFragmentCompat.OnPreferenceStartFragmentCallback,
         PreferenceFragmentCompat.OnPreferenceStartScreenCallback {
@@ -44,8 +42,6 @@ public class PartsActivity extends CollapsingToolbarBaseActivity implements
     public static final String EXTRA_FRAGMENT_ARG_KEY = ":settings:fragment_args_key";
     public static final String EXTRA_SHOW_FRAGMENT_TITLE_RESID =
             ":settings:show_fragment_title_resid";
-
-    private NFCProfileTagCallback mNfcProfileCallback;
 
     private CharSequence mInitialTitle;
 
@@ -129,10 +125,6 @@ public class PartsActivity extends CollapsingToolbarBaseActivity implements
         startPreferencePanel(pref.getFragment(), pref.getExtras(), -1, pref.getTitle(),
                 null, 0);
         return true;
-    }
-
-    public void setNfcProfileCallback(NFCProfileTagCallback callback) {
-        mNfcProfileCallback = callback;
     }
 
     @Override
