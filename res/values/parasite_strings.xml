@@ -32,4 +32,7 @@
     <string name="hardware_keys_action_go_forward">Go forward</string>
     <string name="hardware_keys_action_partial_screenshot">Take partial screenshot</string>
 
+    <!-- Three fingers swipe action -->
+    <string name="three_fingers_swipe_title">Three fingers swipe</string>
+
 </resources>

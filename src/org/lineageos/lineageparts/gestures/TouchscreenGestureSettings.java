@@ -14,10 +14,12 @@ import android.os.UserHandle;
 import android.util.ArraySet;
 
 import androidx.preference.ListPreference;
+import androidx.preference.Preference;
 import androidx.preference.PreferenceManager;
 
 import lineageos.hardware.LineageHardwareManager;
 import lineageos.hardware.TouchscreenGesture;
+import lineageos.providers.LineageSettings;
 
 import org.lineageos.lineageparts.R;
 import org.lineageos.lineageparts.SettingsPreferenceFragment;
@@ -25,11 +27,13 @@ import org.lineageos.lineageparts.search.BaseSearchIndexProvider;
 import org.lineageos.lineageparts.search.Searchable;
 import org.lineageos.lineageparts.utils.ResourceUtils;
 
+import static org.lineageos.internal.util.DeviceKeysConstants.*;
+
 import java.lang.System;
 import java.util.Set;
 
 public class TouchscreenGestureSettings extends SettingsPreferenceFragment
-        implements Searchable {
+        implements Preference.OnPreferenceChangeListener, Searchable {
 
     private static final String KEY_TOUCHSCREEN_GESTURE = "touchscreen_gesture";
     private static final String KEY_TOUCHSCREEN_GESTURE_SETTINGS =
@@ -40,6 +44,10 @@ public class TouchscreenGestureSettings extends SettingsPreferenceFragment
 
     private TouchscreenGesture[] mTouchscreenGestures;
 
+    private static final String KEY_THREE_FINGERS_SWIPE = "three_fingers_swipe";
+
+    private ListPreference mThreeFingersSwipeAction;
+
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +57,41 @@ public class TouchscreenGestureSettings extends SettingsPreferenceFragment
         if (isTouchscreenGesturesSupported(getContext())) {
             initTouchscreenGestures();
         }
+
+        Action threeFingersSwipeAction = Action.fromSettings(getContentResolver(),
+                LineageSettings.System.KEY_THREE_FINGERS_SWIPE_ACTION,
+                Action.NOTHING);
+        mThreeFingersSwipeAction = initList(KEY_THREE_FINGERS_SWIPE, threeFingersSwipeAction);
+    }
+
+    private ListPreference initList(String key, Action value) {
+        return initList(key, value.ordinal());
+    }
+
+    private ListPreference initList(String key, int value) {
+        ListPreference list = (ListPreference) getPreferenceScreen().findPreference(key);
+        if (list == null) return null;
+        list.setValue(Integer.toString(value));
+        list.setSummary(list.getEntry());
+        list.setOnPreferenceChangeListener(this);
+        return list;
+    }
+
+    private void handleListChange(ListPreference pref, Object newValue, String setting) {
+        String value = (String) newValue;
+        int index = pref.findIndexOfValue(value);
+        pref.setSummary(pref.getEntries()[index]);
+        LineageSettings.System.putIntForUser(getContentResolver(), setting, Integer.valueOf(value), UserHandle.USER_CURRENT);
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mThreeFingersSwipeAction) {
+            handleListChange((ListPreference) preference, newValue,
+                    LineageSettings.System.KEY_THREE_FINGERS_SWIPE_ACTION);
+            return true;
+        }
+        return false;
     }
 
     private void initTouchscreenGestures() {
