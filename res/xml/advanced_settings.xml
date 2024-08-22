@@ -15,4 +15,16 @@
             android:defaultValue="false"
             android:order="400"/>
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="advanced_system_key"
+        android:title="@string/advanced_system_title">
+
+        <lineageos.preference.SystemPropertySwitchPreference
+            android:key="persist.sys.boot.theme.monet"
+            android:title="@string/monet_boot_animation_title"
+            android:summary="@string/monet_boot_animation_summary"
+            android:defaultValue="false"
+            android:order="400"/>
+    </PreferenceCategory>
 </PreferenceScreen>
