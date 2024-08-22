@@ -56,9 +56,14 @@
     <!-- Advanced Settings -->
     <string name="advanced_settings_title">Advanced Settings</string>
     <string name="advanced_backup_title">Backup</string>
+    <string name="advanced_system_title">System</string>
 
     <!-- Unlimited g00gle ph0t0s st0rage -->
     <string name="unlimited_photos_storage_title">Unlimited Google Photos storage</string>
     <string name="unlimited_photos_storage_summary">Unlimited storage for backup photos. Google Photos’ new features will not be available.</string>
+
+    <!-- Monet boot animation -->
+    <string name="monet_boot_animation_title">Dynamic color boot animation</string>
+    <string name="monet_boot_animation_summary">Use dynamic color themed boot animation that supports applying highlight colors from your wallpapers.</string>
 
 </resources>
