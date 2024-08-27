@@ -48,6 +48,12 @@
             android:summary="@string/hide_screen_capture_status_summary"
             android:defaultValue="false"/>
 
+        <Preference
+            android:key="clipboard_auto_clear"
+            android:title="@string/clipboard_auto_clear_title"
+            android:summary="@string/clipboard_auto_clear_summary"
+            android:fragment="org.lineageos.lineageparts.security.ClipboardAutoClearSettings" />
+
         <PreferenceCategory
             android:title="@string/privacy_indicator_category"
             android:key="privacy_indicator_category">

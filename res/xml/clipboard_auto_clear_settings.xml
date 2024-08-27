@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     SPDX-FileCopyrightText: 2024 TheParasiteProject
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:title="@string/clipboard_auto_clear_title">
+
+    <com.android.settingslib.widget.TopIntroPreference
+        android:key="clipboard_auto_clear_summary"
+        android:title="@string/clipboard_auto_clear_summary" />
+
+    <lineageos.preference.SecureSettingMainSwitchPreference
+        android:key="clipboard_auto_clear_enabled"
+        android:title="@string/clipboard_auto_clear_enabled_title"
+        android:defaultValue="true"/>
+
+    <lineageos.preference.SecureSettingListPreference
+        android:key="clipboard_auto_clear_timeout"
+        android:title="@string/clipboard_auto_clear_timeout_title"
+        android:summary="%s"
+        android:dependency="clipboard_auto_clear_enabled"
+        android:entries="@array/clipboard_auto_clear_timeout_entries"
+        android:entryValues="@array/clipboard_auto_clear_timeout_values"
+        android:defaultValue="@string/clipboard_timeout_value_default" />
+
+</PreferenceScreen>
