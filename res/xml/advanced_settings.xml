@@ -27,4 +27,23 @@
             android:defaultValue="false"
             android:order="400"/>
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="advanced_launcher_key"
+        android:title="@string/advanced_launcher_title">
+
+        <lineageos.preference.OverlaySwitchPreference
+            android:key="com.google.android.apps.nexuslauncher.blur.overlay"
+            android:title="@string/launcher_background_blur_title"
+            android:summary="@string/launcher_background_blur_summary"
+            android:defaultValue="true"
+            android:order="500"/>
+
+        <lineageos.preference.OverlaySwitchPreference
+            android:key="com.google.android.apps.nexuslauncher.icons.overlay"
+            android:title="@string/more_themed_icons_title"
+            android:summary="@string/more_themed_icons_summary"
+            android:defaultValue="true"
+            android:order="501"/>
+    </PreferenceCategory>
 </PreferenceScreen>
