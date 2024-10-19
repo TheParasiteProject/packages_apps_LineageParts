@@ -57,6 +57,7 @@
     <string name="advanced_settings_title">Advanced Settings</string>
     <string name="advanced_backup_title">Backup</string>
     <string name="advanced_system_title">System</string>
+    <string name="advanced_launcher_title">Pixel Launcher</string>
 
     <!-- Unlimited g00gle ph0t0s st0rage -->
     <string name="unlimited_photos_storage_title">Unlimited Google Photos storage</string>
@@ -65,5 +66,13 @@
     <!-- Monet boot animation -->
     <string name="monet_boot_animation_title">Dynamic color boot animation</string>
     <string name="monet_boot_animation_summary">Use dynamic color themed boot animation that supports applying highlight colors from your wallpapers.</string>
+
+    <!-- Launcher background blur -->
+    <string name="launcher_background_blur_title">Background blur</string>
+    <string name="launcher_background_blur_summary">Enable blur effect for recent items page background.</string>
+
+    <!-- Themed icon -->
+    <string name="more_themed_icons_title">More themed icons</string>
+    <string name="more_themed_icons_summary">Extends support for dynamic color themed icons for installed apps.</string>
 
 </resources>
