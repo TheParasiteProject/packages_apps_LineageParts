@@ -8,6 +8,8 @@
     <string name="menu_show_system">Show system</string>
     <!-- [CHAR LIMIT=NONE] Menu for manage apps to control whether system processes are hidden -->
     <string name="menu_hide_system">Hide system</string>
+    <string name="menu_show_overlay">Show overlay</string>
+    <string name="menu_hide_overlay">Hide overlay</string>
 
     <!-- Floating rotation button -->
     <string name="enable_floating_rotation_button_title">Floating rotate button</string>
@@ -95,6 +97,10 @@
     <!-- Hide developer status -->
     <string name="hide_developer_status_title">Hide developer status</string>
     <string name="hide_developer_status_summary">Prevent apps from checking adb and developer mode status</string>
+
+    <!-- Hide applist -->
+    <string name="hide_applist_title">Hide applist</string>
+    <string name="hide_applist_summary">Prevent apps from checking selected apps from appslist</string>
 
     <!-- Hide screen capture status -->
     <string name="hide_screen_capture_status_title">Hide screen capture status</string>
