@@ -43,7 +43,6 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
     private CheckBoxPreference mScreenshotPref;
     private CheckBoxPreference mAirplanePref;
     private CheckBoxPreference mUsersPref;
-    private CheckBoxPreference mBugReportPref;
     private CheckBoxPreference mEmergencyPref;
     private CheckBoxPreference mDeviceControlsPref;
 
@@ -75,8 +74,6 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
                 mAirplanePref = findPreference(GLOBAL_ACTION_KEY_AIRPLANE);
             } else if (action.equals(GLOBAL_ACTION_KEY_USERS)) {
                 mUsersPref = findPreference(GLOBAL_ACTION_KEY_USERS);
-            } else if (action.equals(GLOBAL_ACTION_KEY_BUGREPORT)) {
-                mBugReportPref = findPreference(GLOBAL_ACTION_KEY_BUGREPORT);
             } else if (action.equals(GLOBAL_ACTION_KEY_EMERGENCY)) {
                 mEmergencyPref = findPreference(GLOBAL_ACTION_KEY_EMERGENCY);
             } else if (action.equals(GLOBAL_ACTION_KEY_DEVICECONTROLS)) {
@@ -115,11 +112,6 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
                         GLOBAL_ACTION_KEY_USERS) && enabled);
                 mUsersPref.setEnabled(enabled);
             }
-        }
-
-        if (mBugReportPref != null) {
-            mBugReportPref.setChecked(mLineageGlobalActions.userConfigContains(
-                    GLOBAL_ACTION_KEY_BUGREPORT));
         }
 
         if (mEmergencyPref != null) {
@@ -171,12 +163,6 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
             value = mUsersPref.isChecked();
             mLineageGlobalActions.updateUserConfig(value, GLOBAL_ACTION_KEY_USERS);
 
-        } else if (preference == mBugReportPref) {
-            value = mBugReportPref.isChecked();
-            mLineageGlobalActions.updateUserConfig(value, GLOBAL_ACTION_KEY_BUGREPORT);
-            Settings.Global.putInt(getContentResolver(),
-                    Settings.Global.BUGREPORT_IN_POWER_MENU, value ? 1 : 0);
-
         } else if (preference == mEmergencyPref) {
             value = mEmergencyPref.isChecked();
             mLineageGlobalActions.updateUserConfig(value, GLOBAL_ACTION_KEY_EMERGENCY);
@@ -195,22 +181,7 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
         UserInfo currentUser = mUserManager.getUserInfo(UserHandle.myUserId());
         boolean developmentSettings = Settings.Global.getInt(
                 getContentResolver(), Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0) == 1;
-        boolean bugReport = Settings.Global.getInt(
-                getContentResolver(), Settings.Global.BUGREPORT_IN_POWER_MENU, 0) == 1;
         boolean isPrimaryUser = currentUser == null || currentUser.isPrimary();
-        if (mBugReportPref != null) {
-            mBugReportPref.setEnabled(developmentSettings && isPrimaryUser);
-            if (!developmentSettings) {
-                mBugReportPref.setChecked(false);
-                mBugReportPref.setSummary(R.string.power_menu_bug_report_devoptions_unavailable);
-            } else if (!isPrimaryUser) {
-                mBugReportPref.setChecked(false);
-                mBugReportPref.setSummary(R.string.power_menu_bug_report_unavailable_for_user);
-            } else {
-                mBugReportPref.setChecked(bugReport);
-                mBugReportPref.setSummary(null);
-            }
-        }
         if (mEmergencyPref != null) {
             if (mForceEmergCheck) {
                 mEmergencyPref.setSummary(R.string.power_menu_emergency_affordance_enabled);
