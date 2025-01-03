@@ -22,7 +22,6 @@
     <lineageos.preference.SecureSettingSwitchPreference
         android:key="charging_vibration_enabled"
         android:title="@string/power_notifications_vibrate_title"
-        android:dependency="charging_sounds_enabled"
         android:defaultValue="true" />
 
     <PreferenceCategory
