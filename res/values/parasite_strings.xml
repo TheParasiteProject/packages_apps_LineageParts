@@ -53,4 +53,7 @@
     <string name="back_swipe_extended_summary">Trigger action on wider swipe (more than half of display size), or a L swipe (vertically longer enough)</string>
     <string name="action_app_action">Application</string>
 
+    <!-- Charger haptic feedback -->
+    <string name="charger_haptic_feedback_title">Vibrate on charger connection changes</string>
+
 </resources>

@@ -14,15 +14,14 @@
         android:key="charging_sounds_top_intro"
         android:title="@string/charging_sounds_summary"/>
 
+    <lineageos.preference.SecureSettingSwitchPreference
+        android:key="charging_vibration_enabled"
+        android:title="@string/charger_haptic_feedback_title"
+        android:defaultValue="true" />
+
     <lineageos.preference.GlobalSettingMainSwitchPreference
         android:key="charging_sounds_enabled"
         android:title="@string/charging_sounds_enable_title"
-        android:defaultValue="true" />
-
-    <lineageos.preference.SecureSettingSwitchPreference
-        android:key="charging_vibration_enabled"
-        android:title="@string/power_notifications_vibrate_title"
-        android:dependency="charging_sounds_enabled"
         android:defaultValue="true" />
 
     <PreferenceCategory
