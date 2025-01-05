@@ -151,4 +151,8 @@
     <string name="clipboard_timeout_entries_default">1 hour</string>
     <string name="clipboard_auto_clear_timeout_title">Clipboard auto clear timeout</string>
 
+    <!-- Sounds: Charging sounds -->
+    <string name="reset_wired_charging_sounds_title">Reset wired charging sound</string>
+    <string name="reset_wireless_charging_sounds_title">Reset wireless charging sound</string>
+
 </resources>

@@ -29,10 +29,23 @@
         android:title="@string/charging_sounds_notification_category_title" >
 
         <Preference
+            android:key="reset_charging_sounds"
+            android:title="@string/reset_wired_charging_sounds_title"
+            android:dependency="charging_sounds_enabled"
+            android:persistent="false" />
+
+        <Preference
             android:key="charging_sounds"
             android:title="@string/wired_charging_sounds_title"
             android:dependency="charging_sounds_enabled"
             android:persistent="false" />
+
+        <lineageos.preference.SelfRemovingPreference
+            android:key="reset_wireless_charging_sounds"
+            android:title="@string/reset_wireless_charging_sounds_title"
+            android:dependency="charging_sounds_enabled"
+            android:persistent="false"
+            lineage:requiresConfig="@*lineageos.platform:bool/config_deviceSupportsWirelessCharging" />
 
         <lineageos.preference.SelfRemovingPreference
             android:key="wireless_charging_sounds"

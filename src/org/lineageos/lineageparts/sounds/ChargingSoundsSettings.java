@@ -40,6 +40,8 @@ public class ChargingSoundsSettings
     private static final String KEY_CHARGING_VIBRATION_ENABLED = "charging_vibration_enabled";
     private static final String KEY_WIRED_CHARGING_SOUNDS = "charging_sounds";
     private static final String KEY_WIRELESS_CHARGING_SOUNDS = "wireless_charging_sounds";
+    private static final String KEY_RESET_WIRED_CHARGING_SOUNDS = "reset_charging_sounds";
+    private static final String KEY_RESET_WIRELESS_CHARGING_SOUNDS = "reset_wireless_charging_sounds";
 
     // Used for power notification uri string if set to silent
     private static final String RINGTONE_SILENT_URI_STRING = "silent";
@@ -55,6 +57,8 @@ public class ChargingSoundsSettings
 
     private Preference mWiredChargingSounds;
     private Preference mWirelessChargingSounds;
+    private Preference mResetWiredChargingSounds;
+    private Preference mResetWirelessChargingSounds;
 
     private Uri mDefaultWiredChargingSoundUri;
     private Uri mDefaultWirelessChargingSoundUri;
@@ -116,6 +120,8 @@ public class ChargingSoundsSettings
 
         mWiredChargingSounds = findPreference(KEY_WIRED_CHARGING_SOUNDS);
         mWirelessChargingSounds = findPreference(KEY_WIRELESS_CHARGING_SOUNDS);
+        mResetWiredChargingSounds = findPreference(KEY_RESET_WIRED_CHARGING_SOUNDS);
+        mResetWirelessChargingSounds = findPreference(KEY_RESET_WIRELESS_CHARGING_SOUNDS);
     }
 
     @Override
@@ -210,6 +216,10 @@ public class ChargingSoundsSettings
             launchNotificationSoundPicker(REQUEST_CODE_WIRELESS_CHARGING_SOUND,
                     Settings.Global.getString(getContentResolver(),
                             Settings.Global.WIRELESS_CHARGING_STARTED_SOUND));
+        } else if (preference == mResetWiredChargingSounds) {
+            updateChargingSounds(DEFAULT_WIRED_CHARGING_SOUND, false /* wireless */);
+        } else if (preference == mResetWirelessChargingSounds) {
+            updateChargingSounds(DEFAULT_WIRELESS_CHARGING_SOUND, true /* wireless */);
         }
         return super.onPreferenceTreeClick(preference);
     }
@@ -248,6 +258,7 @@ public class ChargingSoundsSettings
             if (!context.getResources().getBoolean(org.lineageos.platform.internal.R.bool
                     .config_deviceSupportsWirelessCharging)) {
                 result.add(KEY_WIRELESS_CHARGING_SOUNDS);
+                result.add(KEY_RESET_WIRELESS_CHARGING_SOUNDS);
             }
             return result;
         }
