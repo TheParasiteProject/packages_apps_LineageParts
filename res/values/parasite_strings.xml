@@ -155,4 +155,8 @@
     <string name="reset_wired_charging_sounds_title">Reset wired charging sound</string>
     <string name="reset_wireless_charging_sounds_title">Reset wireless charging sound</string>
 
+    <!-- Navigation compact layout -->
+    <string name="navigation_bar_compact_layout_title">Compact layout</string>
+    <string name="navigation_bar_compact_layout_summary">Use a compact layout in the navigation bar</string>
+
 </resources>
