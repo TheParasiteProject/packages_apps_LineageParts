@@ -99,6 +99,7 @@ public class ButtonSettings extends SettingsPreferenceFragment
             "click_partial_screenshot";
     private static final String KEY_SWAP_CAPACITIVE_KEYS = "swap_capacitive_keys";
     private static final String KEY_NAV_BAR_INVERSE = "sysui_nav_bar_inverse";
+    private static final String KEY_NAV_BAR_COMPACT = "sysui_nav_bar_compact";
     private static final String KEY_ENABLE_TASKBAR = "enable_taskbar";
 
     private static final String CATEGORY_POWER = "power_key";
@@ -137,6 +138,7 @@ public class ButtonSettings extends SettingsPreferenceFragment
     private ListPreference mTorchLongPressPowerTimeout;
     private SwitchPreferenceCompat mSwapCapacitiveKeys;
     private SwitchPreferenceCompat mNavBarInverse;
+    private SwitchPreferenceCompat mNavBarCompact;
     private SwitchPreferenceCompat mEnableTaskbar;
 
     private PreferenceCategory mNavigationPreferencesCat;
@@ -450,6 +452,7 @@ public class ButtonSettings extends SettingsPreferenceFragment
         }
 
         mNavBarInverse = findPreference(KEY_NAV_BAR_INVERSE);
+        mNavBarCompact = findPreference(KEY_NAV_BAR_COMPACT);
 
         mEnableTaskbar = findPreference(KEY_ENABLE_TASKBAR);
         if (mEnableTaskbar != null) {
@@ -669,6 +672,7 @@ public class ButtonSettings extends SettingsPreferenceFragment
     private void toggleTaskBarDependencies(boolean enabled) {
         enablePreference(mNavigationArrowKeys, !enabled);
         enablePreference(mNavBarInverse, !enabled);
+        enablePreference(mNavBarCompact, !enabled);
         enablePreference(mNavigationBackLongPressAction, !enabled);
         enablePreference(mNavigationHomeLongPressAction, !enabled);
         enablePreference(mNavigationHomeDoubleTapAction, !enabled);
