@@ -106,4 +106,9 @@
           android:fragment="org.lineageos.lineageparts.system.AdvancedSettings"
           lineage:xmlRes="@xml/advanced_settings" />
 
+    <part android:key="lineage_sdk_info"
+          android:title="@string/lineage_sdk_info_title"
+          android:fragment="org.lineageos.lineageparts.sdkinfo.SdkInfoFragment"
+          lineage:xmlRes="@xml/lineage_sdk_info" />
+
 </parts-catalog>

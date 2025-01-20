@@ -170,4 +170,7 @@
     <string name="unit_pixels" translatable="false">dp</string>
     <string name="unit_hz" translatable="false">hz</string>
 
+    <!-- Lineage SDK info -->
+    <string name="lineage_sdk_info_title">Lineage SDK information</string>
+
 </resources>
