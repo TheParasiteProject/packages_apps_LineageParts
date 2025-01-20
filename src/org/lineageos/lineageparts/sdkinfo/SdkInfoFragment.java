@@ -42,12 +42,12 @@ public class SdkInfoFragment extends SettingsPreferenceFragment implements Searc
     private static final String LINEAGE_BUILD_DATE = "lineage_build_date";
     private static final String LINEAGE_LICENSE = "lineage_license";
 
-    private static final String KEY_LINEAGE_VERSION_PROP = "ro.lineage.build.version";
+    private static final String KEY_LINEAGE_VERSION_PROP = "ro.custom.sdk.build.version";
     private static final String KEY_AOSP_VENDOR_SECURITY_PATCH = "ro.vendor.build.security_patch";
     private static final String KEY_LINEAGE_VENDOR_SECURITY_PATCH =
-            "ro.lineage.build.vendor_security_patch";
+            "ro.custom.build.vendor_security_patch";
     private static final String KEY_BUILD_DATE_PROP = "ro.build.date";
-    private static final String KEY_LINEAGE_LICENSE_URL = "ro.lineagelegal.url";
+    private static final String KEY_LINEAGE_LICENSE_URL = "ro.custom.legal.url";
 
     private static final int DELAY_TIMER_MILLIS = 500;
     private static final int ACTIVITY_TRIGGER_COUNT = 3;
