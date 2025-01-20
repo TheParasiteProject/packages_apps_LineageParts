@@ -310,6 +310,18 @@
                 android:resource="@string/summary_empty" />
         </activity-alias>
 
+        <!-- Contributors Cloud (MyDeviceInfo category) -->
+        <activity-alias
+            android:name=".contributors.ContributorsCloudFragment"
+            android:exported="true"
+            android:label="@string/contributors_cloud_fragment_title"
+            android:targetActivity="PartsActivity">
+            <intent-filter>
+                <action android:name="org.lineageos.lineageparts.CONTRIBUTORS_CLOUD" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity-alias>
+
         <!-- Lineage SDK info (MyDeviceInfo category) -->
         <activity-alias
             android:name=".sdkinfo.SdkInfoFragment"
