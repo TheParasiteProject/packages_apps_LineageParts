@@ -566,7 +566,7 @@
 
     <!-- Display : Rotation  -->
     <string name="accelerometer_title">Auto-rotate screen</string>
-    <string name="display_rotation_title">Rotation settings</string>
+    <string name="display_rotation_title">Advenced rotation settings</string>
     <string name="display_rotation_enabled">Auto-rotation is enabled</string>
     <string name="display_rotation_disabled">Auto-rotation is disabled</string>
     <string name="display_rotation_unit">degrees</string>

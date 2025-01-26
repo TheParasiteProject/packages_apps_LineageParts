@@ -22,8 +22,7 @@ import com.android.settingslib.widget.MainSwitchPreference;
 import org.lineageos.lineageparts.R;
 import org.lineageos.lineageparts.SettingsPreferenceFragment;
 
-public class DisplayRotation extends SettingsPreferenceFragment
-        implements CompoundButton.OnCheckedChangeListener {
+public class DisplayRotation extends SettingsPreferenceFragment {
     private static final String TAG = "DisplayRotation";
 
     public static final String KEY_ACCELEROMETER = "accelerometer";
@@ -32,7 +31,6 @@ public class DisplayRotation extends SettingsPreferenceFragment
     private static final String ROTATION_180_PREF = "display_rotation_180";
     private static final String ROTATION_270_PREF = "display_rotation_270";
 
-    private MainSwitchPreference mAccelerometer;
     private CheckBoxPreference mRotation0Pref;
     private CheckBoxPreference mRotation90Pref;
     private CheckBoxPreference mRotation180Pref;
@@ -51,10 +49,6 @@ public class DisplayRotation extends SettingsPreferenceFragment
 
         PreferenceScreen prefSet = getPreferenceScreen();
 
-        mAccelerometer = findPreference(KEY_ACCELEROMETER);
-        mAccelerometer.addOnSwitchChangeListener(this);
-        mAccelerometer.setPersistent(false);
-
         mRotation0Pref = prefSet.findPreference(ROTATION_0_PREF);
         mRotation90Pref = prefSet.findPreference(ROTATION_90_PREF);
         mRotation180Pref = prefSet.findPreference(ROTATION_180_PREF);
@@ -70,22 +64,6 @@ public class DisplayRotation extends SettingsPreferenceFragment
         mRotation270Pref.setChecked((mode & ROTATION_270_MODE) != 0);
 
         watch(Settings.System.getUriFor(Settings.System.ACCELEROMETER_ROTATION));
-    }
-
-    @Override
-    public void onSettingsChanged(Uri contentUri) {
-        super.onSettingsChanged(contentUri);
-        updateAccelerometerRotationSwitch();
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        updateAccelerometerRotationSwitch();
-    }
-
-    private void updateAccelerometerRotationSwitch() {
-        mAccelerometer.setChecked(!RotationPolicy.isRotationLocked(requireActivity()));
     }
 
     private int getRotationBitmask() {
@@ -123,17 +101,4 @@ public class DisplayRotation extends SettingsPreferenceFragment
 
         return super.onPreferenceTreeClick(preference);
     }
-
-    @Override
-    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        RotationPolicy.setRotationLockForAccessibility(requireActivity(),
-                !mAccelerometer.isChecked(), /* caller= */ "DisplayRotation");
-    }
-
-    public static final SummaryProvider SUMMARY_PROVIDER = (context, key) -> {
-        if (RotationPolicy.isRotationLocked(context)) {
-            return context.getString(R.string.display_rotation_disabled);
-        }
-        return context.getString(R.string.display_rotation_enabled);
-    };
 }
